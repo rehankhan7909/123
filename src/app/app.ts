@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ProductsService } from './services/products';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,14 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('api');
+  productList:any;
+  constructor(private productService:ProductsService){}
+
+  ngOnInit(){
+    this.productService.getProductList().subscribe((data:any)=>{
+      console.log(data);
+      this.productList=data.products;
+      
+    });  
+  }
 }
