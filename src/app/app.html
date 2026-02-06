@@ -1,12 +1,58 @@
  <h1>API </h1>
 
- @for (p of productList; track p.id) {
+ <!-- @for (p of productList; track p.id) {
   <ul>
   <li>{{p.title}}</li>
   <li>{{p.category}}</li>
   <li>{{p.brand}}</li>
   <li>{{p.availabilityStatus}}</li>
+  <li>{{p.description}}</li>
   <li><img src="{{p.thumbnail}}"   alt=""></li>
   
+  </ul>
+ } -->
+
+
+
+  <!--  post api -->
+ <h1>post ApI</h1>
+
+<form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)">
+
+<input type="text" placeholder="enetr text" name="name" ngModel>
+    <br><br>
+<input type="text" placeholder="enetr email" name="email" ngModel>
+  <br><br>
+<input type="text" placeholder="enetr age" name="age" ngModel>
+<br>
+<button>Add User</button>
+
+</form>
+
+
+<!-- for user data -->
+ <!-- <h2>user api</h2>
+  @for (u of users; track u.id) {
+  <ul>
+  <li>{{u.name}}</li>
+  <li>{{u.age}}</li>
+  <li>{{u.id}}</li>
+  <li>{{u.email}}</li>
+  </ul>
+ } -->
+
+
+
+
+
+ <!-- for delete user data -->
+ <h2>user api</h2>
+  @for (u of users; track u.id) {
+  <ul>
+  <li>{{u.name}}</li>
+  <li>{{u.age}}</li>
+  <li>{{u.id}}</li>
+  <li>{{u.email}}</li>
+  <li><button (click)="deleteUser(u.id)">Delete</button></li>
   </ul>
  }

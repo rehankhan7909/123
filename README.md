@@ -3,6 +3,8 @@ This is My First Repo
 This is my merge changes
 
 this is my fault code 
+
+this is my new code for git stash
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.15.
 
 ## Development server
